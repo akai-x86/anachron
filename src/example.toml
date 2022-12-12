@@ -1,0 +1,19 @@
+[data]
+source = "path/to/source"
+height = 32
+width  = 32
+x = 5
+y = 5
+
+[graph]
+vertices = [
+      { data = { flag = "ENGINE_CELL_ZERO",     move = 5 }, title = "Jump" },
+      { data = { flag = "ENGINE_CELL_NEXTROW",  move = 4 }, title = "Kick" },
+      # ETC..
+   ]
+
+edges = [
+      { next = ["Death"], prev = ["FLAG_ALL"], flag = "DIR_NEXT" },
+      { next = ["Idle", "Run"], prev = ["Jump"], flag = "DIR_BOTH" }
+      # ETC..
+]
